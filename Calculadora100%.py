@@ -1,5 +1,12 @@
 from tkinter import *
 
+def entrada(valor):
+    label1['text'] += valor
+
+def saida():
+    resultado = eval(label1['text'])
+    label1['text'] = str(resultado)
+
 Calculadora = Tk()
 
 # Tamanhos dos botões(Button)
@@ -10,27 +17,27 @@ Calculadora.grid_columnconfigure(1, weight=1)
 Calculadora.grid_columnconfigure(2, weight=1)
 
 # widgets
-label1 = Label(Calculadora)
-bt1 = Button(Calculadora, text='7', font='Arial 30')
-bt2 = Button(Calculadora, text='8', font='Arial 30')
-bt3 = Button(Calculadora, text='9', font='Arial 30')
-bt4 = Button(Calculadora, text='*', font='Arial 30')
-bt5 = Button(Calculadora, text='4', font='Arial 30')
-bt6 = Button(Calculadora, text='5', font='Arial 30')
-bt7 = Button(Calculadora, text='6', font='Arial 30')
-bt8 = Button(Calculadora, text='/', font='Arial 30')
-bt9 = Button(Calculadora, text='1', font='Arial 30')
-bt10 = Button(Calculadora, text='2', font='Arial 30')
-bt11 = Button(Calculadora, text='3', font='Arial 30')
-bt12 = Button(Calculadora, text='+', font='Arial 30')
-bt13 = Button(Calculadora, text='0', font='Arial 30')
-bt14 = Button(Calculadora, text='=', font='Arial 30')
-bt15 = Button(Calculadora, text='.', font='Arial 30')
-bt16 = Button(Calculadora, text='-', font='Arial 30')
-bt17 = Button(Calculadora, text='Del', font='Arial 30')
-bt18 = Button(Calculadora, text='C', font='Arial 30')
-bt19 = Button(Calculadora, text='(', font='Arial 30')
-bt20 = Button(Calculadora, text=')', font='Arial 30')
+label1 = Label(Calculadora, text='', font='Arial 28')
+bt1 = Button(Calculadora, text='7', font='Arial 30', command=lambda: entrada('7'))
+bt2 = Button(Calculadora, text='8', font='Arial 30', command=lambda: entrada('8'))
+bt3 = Button(Calculadora, text='9', font='Arial 30', command=lambda: entrada('9'))
+bt4 = Button(Calculadora, text='*', font='Arial 30', command=lambda: entrada('*'))
+bt5 = Button(Calculadora, text='4', font='Arial 30', command=lambda: entrada('4'))
+bt6 = Button(Calculadora, text='5', font='Arial 30', command=lambda: entrada('5'))
+bt7 = Button(Calculadora, text='6', font='Arial 30', command=lambda: entrada('6'))
+bt8 = Button(Calculadora, text='/', font='Arial 30', command=lambda: entrada('/'))
+bt9 = Button(Calculadora, text='1', font='Arial 30', command=lambda: entrada('1'))
+bt10 = Button(Calculadora, text='2', font='Arial 30', command=lambda: entrada('2'))
+bt11 = Button(Calculadora, text='3', font='Arial 30', command=lambda: entrada('3'))
+bt12 = Button(Calculadora, text='+', font='Arial 30', command=lambda: entrada('+'))
+bt13 = Button(Calculadora, text='0', font='Arial 30', command=lambda: entrada('0'))
+bt14 = Button(Calculadora, text='=', font='Arial 30', command=lambda: saida())
+bt15 = Button(Calculadora, text='.', font='Arial 30', command=lambda: entrada('.'))
+bt16 = Button(Calculadora, text='-', font='Arial 30', command=lambda: entrada('-'))
+bt17 = Button(Calculadora, text='Del', font='Arial 30', command=lambda: entrada('Del'))
+bt18 = Button(Calculadora, text='C', font='Arial 30', command=lambda: entrada('C'))
+bt19 = Button(Calculadora, text='(', font='Arial 30', command=lambda: entrada('('))
+bt20 = Button(Calculadora, text=')', font='Arial 30', command=lambda: entrada(')'))
 
 # layout
 label1.grid(row=0, column=0, sticky=NSEW)
