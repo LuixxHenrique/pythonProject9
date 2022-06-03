@@ -7,6 +7,10 @@ def saida():
     resultado = eval(label1['text'])
     label1['text'] = str(resultado)
 
+def  limpar():
+    label1['text'] = ''
+
+
 Calculadora = Tk()
 
 # Tamanhos dos botões(Button)
@@ -34,8 +38,8 @@ bt13 = Button(Calculadora, text='0', font='Arial 30', command=lambda: entrada('0
 bt14 = Button(Calculadora, text='=', font='Arial 30', command=lambda: saida())
 bt15 = Button(Calculadora, text='.', font='Arial 30', command=lambda: entrada('.'))
 bt16 = Button(Calculadora, text='-', font='Arial 30', command=lambda: entrada('-'))
-bt17 = Button(Calculadora, text='Del', font='Arial 30', command=lambda: entrada('Del'))
-bt18 = Button(Calculadora, text='C', font='Arial 30', command=lambda: entrada('C'))
+bt17 = Button(Calculadora, text='Del', font='Arial 30', command=lambda: limpar())
+bt18 = Button(Calculadora, text='C', font='Arial 30', command=lambda: limpar())
 bt19 = Button(Calculadora, text='(', font='Arial 30', command=lambda: entrada('('))
 bt20 = Button(Calculadora, text=')', font='Arial 30', command=lambda: entrada(')'))
 
